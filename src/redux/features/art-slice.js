@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getArts = createAsyncThunk("arts/getArts", async() => {
-    return fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
-        res.json()
+    return fetch("https://api.artic.edu/api/v1/artworks?page=2&limit=10").then(
+        (res) => res.json()
     );
 });
 
@@ -13,13 +13,16 @@ const artSlice = createSlice({
         loading: false,
     },
     extraReducers: {
+        // pending
         [getArts.pending]: (state, action) => {
             state.loading = true;
         },
+        // successful
         [getArts.fulfilled]: (state, action) => {
             state.loading = false;
             state.arts = action.payload;
         },
+        // failed
         [getArts.rejected]: (state, action) => {
             state.loading = false;
         },

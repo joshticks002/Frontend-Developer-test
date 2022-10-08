@@ -1,4 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ArtReducer from "./features/art-slice";
+import ArtReducer from "./Features/art-slice";
 
-export default configureStore({ reducer: { arts: ArtReducer } });
+export default configureStore({
+    reducer: {
+        art: ArtReducer,
+    },
+});
