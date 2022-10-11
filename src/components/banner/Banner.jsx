@@ -5,29 +5,31 @@ import { Outlet } from "react-router-dom";
 const Banner = () => {
   return (
     <>
-      <div className="flex flex-row items-center justify-between">
-        <div className="w-2/4 flex flex-col gap-x-24">
-          <div>
-            <h1 className="text-7xl">
-              Discover amazing art around the
+      <div className="flex flex-row justify-between mt-14 pt-10 h-screen">
+        <div className="w-3/5 flex flex-col gap-x-24">
+          <div className="w-3/4">
+            <h1 className="text-7xl font-medium">
+              Discover amazing <span>art around the </span>
               <span className="text-[#FBAF00]">world</span>
             </h1>
           </div>
           <div>
-            <p>
+            <p className="mt-11 w-2/5">
               Browse a curated selection of art around the world, Including
-              museum exhibitions, galley openings, upcoming and many more
+              museum exhibitions, gallery openings, upcoming and many more
             </p>
           </div>
-          <div>
+          <div className="mt-11">
             <Button children="Explore arts" />
           </div>
         </div>
-        <div className="relative">
-          <span className="relative">
+        <div className="relative mb-4 w-2/4 h-full">
+        <span className="absolute z-30 mt-10 mr-14"><img src="/assets/vector.png" alt="strings" /></span>
+          <span className="absolute z-20 ml-14">
             <img src="/assets/banner.png" alt="levi mattia" />
           </span>
-          <span class="absolute -mb-1 -mr-1 bg-[#FBAF00]"></span>
+          
+          <span class="absolute z-10 bg-[#FBAF00] h-full"></span>
         </div>
       </div>
       <Outlet />

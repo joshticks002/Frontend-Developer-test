@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="bg-[#110C00] text-white px-6 font-sora not-italic ">
+    <div className="bg-[#110C00] text-white px-10 font-sora not-italic ">
       <Routes>
         <Route path="/" element={<Header />}>
           <Route path="/" element={<Banner />}>
