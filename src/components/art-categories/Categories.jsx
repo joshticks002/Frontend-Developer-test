@@ -14,23 +14,25 @@ const Categories = () => {
     setArtsCollection(arts);
   }, [dispatch, arts]);
 
-  console.log(arts);
 
   return (
-    <div className="flex flex-col pt-10">
-      <div className="flex flex-row justify-between">
-        <div>
-          <h2 className="font-semibold text-[40px]" >Art in the collection</h2>
-          <p className="mt-6 w-3/5">
+    <div className="flex flex-col md:pt-10 lg:pt-12">
+      <div className="flex md:flex-row lg:flex-row flex-col justify-between">
+        <div className="flex item-center flex-col justify-center">
+          <h2 className="font-semibold text-[40px]">Art in the collection</h2>
+          <p className="md:mt-6 lg:mt-8 w-3/5">
             Browse a curated selection of art around the world, Including museum
             exhibitions, gallery openings, upcoming and many more
           </p>
         </div>
-        <div className="mt-6">
-          <input placeholder="search" className="bg-[#1A1405] rounded-3xl  h-12 w-[530px] text-[#FBAF00] px-6" />
+        <div className="lg:mt-6 md:mt-4 mt-6">
+          <input
+            placeholder="search"
+            className="bg-[#1A1405] rounded-3xl md:h-12 md:w-[530px] h-12 w-[200px] text-[#FBAF00] px-6"
+          />
         </div>
       </div>
-      <div className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 flex flex-row flex-wrap items-center justify-evenly gap-x-24 mt-11">
+      <div className="grid-cols-1 md:grid-cols-3 lg:grid-cols-4 flex flex-row flex-wrap items-center justify-evenly gap-x-24 mt-11">
         {artsCollection?.data?.map((art) => (
           <div
             key={art.id}
@@ -39,7 +41,7 @@ const Categories = () => {
             <div className="h-[15rem] w-64 object-fit">
               <img
                 src={`https://www.artic.edu/iiif/2/${art.image_id}/full/843,/0/default.jpg`}
-                alt={art.thumbnail.alt_text}
+                alt={art.title}
                 className="h-full w-full rounded-tl-[6rem] object-cover"
               />
             </div>

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getArts = createAsyncThunk("arts/getArts", async() => {
-    return fetch("https://api.artic.edu/api/v1/artworks?page=2&limit=10").then(
+    return fetch("https://api.artic.edu/api/v1/artworks?page=1&limit=10").then(
         (res) => res.json()
     );
 });
